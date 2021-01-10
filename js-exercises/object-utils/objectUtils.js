@@ -16,5 +16,25 @@ const map = (objectToBeModified, callback) => {
     console.log("Error::", err);
   }
 };
-export { map };
-//filter, invert, merge, all, some
+
+const invert = obj => {
+  let resultantObject = {};
+  for (const [key, value] of Object.entries(obj)) {
+    resultantObject[value] = key;
+  }
+
+  return resultantObject;
+};
+
+const filter = (obj, callback) => {
+  let result = {};
+  for (const [key, value] of Object.entries(obj)) {
+    if (callback([key, value])) {
+      result[key] = value;
+    }
+  }
+  return result;
+};
+
+export { map, invert, filter };
+//filter,merge,all,some
