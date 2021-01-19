@@ -6,7 +6,7 @@ function curry(func) {
     if (func.length === 2) {
       return b => func(args[0], b);
     }
-    if (func.length === 3 && args.length == 2) {
+    if (func.length === 3 && args.length === 2) {
       return b => func(args[0], args[1], b);
     }
 
